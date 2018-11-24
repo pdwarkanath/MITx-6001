@@ -1,3 +1,5 @@
+import random 
+
 class Hand(object):
     def __init__(self, n):
         '''
@@ -21,7 +23,7 @@ class Hand(object):
         self.hand = {}
 
         # Build the hand
-        numVowels = self.HAND_SIZE / 3
+        numVowels = self.HAND_SIZE // 3
     
         for i in range(numVowels):
             x = self.VOWELS[random.randrange(0,len(self.VOWELS))]
@@ -61,8 +63,7 @@ class Hand(object):
         Display a string representation of the hand.
         '''
         output = ''
-        hand_keys = self.hand.keys()
-        hand_keys.sort()
+        hand_keys = sorted(self.hand.keys())
         for letter in hand_keys:
             for j in range(self.hand[letter]):
                 output += letter
@@ -90,3 +91,4 @@ class Hand(object):
                 return False
         self.hand = newHand
         return True
+
