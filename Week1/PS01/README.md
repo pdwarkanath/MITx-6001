@@ -1,0 +1,1 @@
+Open individual files to check description of the problem and my solution
